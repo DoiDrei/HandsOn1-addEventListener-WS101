@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On1</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2ecc71; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #fff; 
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        button {
+            margin-bottom: 10px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 15px;
+            color: #fff;
+            background: linear-gradient(to right, #27ae60, #2ecc71); 
+            position: relative;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(221, 255, 0, 0.72);
+            transition: background 0.3s ease, transform 0.2s ease-out;
+            cursor: pointer;
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            background-color: rgba(255, 77, 0, 0.719);
+            z-index: -1;
+            box-shadow: 0 5px 15px rgba(196, 15, 15, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #2ecc71, #db8a34); 
+            transform: translateY(-2px);
+        }
+
+        button:hover::before {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript addEventListener() Hands-On</h1>
+
+    <div class="button-container">
+        <button id="button1">Button 1</button>
+        <button id="button2">Button 2</button>
+        <button id="button3">Button 3</button>
+    </div>
+
+    <script>
+        function handleClickButton(buttonNumber) {
+            alert("Button " + buttonNumber + " was clicked!");
+        }
+
+        document.getElementById("button1").addEventListener("click", function() {
+            handleClickButton(1);
+        });
+
+        document.getElementById("button2").addEventListener("click", function() {
+            handleClickButton(2);
+        });
+
+        document.getElementById("button3").addEventListener("click", function() {
+            handleClickButton(3);
+        });
+    </script>
+
+</body>
+</html>
